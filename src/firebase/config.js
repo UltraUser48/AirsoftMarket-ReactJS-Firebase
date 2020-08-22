@@ -1,6 +1,6 @@
 var firebaseConfig = {
-  apiKey: "AIzaSyBE89gF2FVNH-JxrAgdFdsmFTPwjeqJ0PE",
-  authDomain: "airsoftmarket-3f75e.firebaseapp.com",
+  apiKey: "",
+  authDomain: "",
   databaseURL: "https://airsoftmarket-3f75e.firebaseio.com",
   projectId: "airsoftmarket-3f75e",
   storageBucket: "airsoftmarket-3f75e.appspot.com",
