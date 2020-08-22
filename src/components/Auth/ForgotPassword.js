@@ -1,5 +1,7 @@
 import React from "react";
 import { FirebaseContext } from "../../firebase";
+import { Button } from 'react-bootstrap';
+
 
 function ForgotPassword() {
   const { firebase } = React.useContext(FirebaseContext)
@@ -29,11 +31,17 @@ async function handleResetPassword() {
   onChange={event => setResetPasswordEmail(event.target.value)}
   />
   <div>
-<button className="button" onClick={handleResetPassword}>
-Reset Password
-</button>
+<Button variant="warning" onClick={handleResetPassword}
+          >
+            Reset My Password
+          </Button>
+
   </div>
-  {isPasswordReset && <p>Check email to reset password</p>}
+  <br/>
+
+  <img src="/reset.jpg" alt="home" />
+
+  {isPasswordReset && <p class="text-success">Email with Password Reset link has been Sent Successfully!</p>}
   {passwordResetError && <p className="error-text">{passwordResetError}</p>}
 </div>
 

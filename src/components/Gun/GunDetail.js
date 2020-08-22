@@ -1,7 +1,7 @@
 import React from "react";
 import FirebaseContext from '../../firebase/context'
 import GunItem from "./GunItem"
-
+import { Button, Form } from 'react-bootstrap';
 
 function GunDetail(props) {
   const { firebase, user } = React.useContext(FirebaseContext)
@@ -23,6 +23,7 @@ function GunDetail(props) {
   function handleAddComment() {
     if (!user) {
       props.history.push('/login')
+      alert("You need to be logged in order to Add comments!")
     } else {
       gunRef.get().then(doc => {
         if (doc.exists) {
@@ -56,14 +57,14 @@ function GunDetail(props) {
           cols='60'
         />
         <div>
-          <button className="button" onClick={handleAddComment}>
-            Add Comment
-  </button>
+  <Button variant="warning" onClick={handleAddComment} >Add a Comment</Button>
+  <br/>
         </div>
+        <br/>
         {gun.comments.map((comment, index) => (
-          <div key={index}>
+          <div class="p-3 mb-2 bg-info text-white" key={index}>
             <p className="comment-author">
-        {comment.postedBy.name} | {new Date(comment.created).toLocaleDateString("en-US")}
+        Posted by {comment.postedBy.name} on {new Date(comment.created).toLocaleDateString("en-US")}
     </p>
         <p>{comment.text}</p>
           </div>

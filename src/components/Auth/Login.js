@@ -3,7 +3,7 @@ import useFormValidation from "./useFormValidation";
 import validateLogin from "./validateLogin";
 import firebase from "../../firebase"
 import { Link } from "react-router-dom";
-import { Button } from 'react-bootstrap';
+import { Button, Form } from 'react-bootstrap';
 
 
 const INITIAL_STATE = {
@@ -34,19 +34,23 @@ function Login(props) {
 
   return (
     <div>
-      <h2 className="mv3">{login ? "Login" : "Create Account"}</h2>
+      <h2 className="mv3">{login ? "Login" : "Register"}</h2>
       <form onSubmit={handleSubmit} className="flex flex-column">
         {!login && (
-          <input
+
+          
+          <Form.Control
             onChange={handleChange}
             value={values.name}
             name="name"
-            type="text" placeholder="Your Name" autoComplete="off" />
+            type="text" placeholder="Your Name" autoComplete="off" 
+            
+            />
+           
         )}
-
         <br />
 
-        <input
+        <Form.Control
           onChange={handleChange}
           onBlur={handleBlur}
           value={values.email}
@@ -58,7 +62,7 @@ function Login(props) {
         {errors.email && <p className="error-text">{errors.email}</p>}
         <br />
 
-        <input
+        <Form.Control
           onChange={handleChange}
           onBlur={handleBlur}
           value={values.password}
@@ -70,23 +74,27 @@ function Login(props) {
 
         {errors.password && <p className="error-text">{errors.password}</p>}
         {firebaseError && <p className="error-text">{firebaseError}</p>}
-
+<br/>
         <div>
-          <Button type="submit" varian="outline-primary" disabled={isSubmitting}
+          <Button type="submit" variant="warning" disabled={isSubmitting}
           >
             Submit
           </Button>
+          </div>
           <br/>
+         <div>
           <Button
-            variant="outline-secondary"
+            variant="warning"
             onClick={() => setLogin(prevLogin => !prevLogin)}
           >
-            {login ? "need to create an account" : "Already have an account ?"}
+            {login ? "Create an Account" : "Already have an account ?"}
           </Button>{' '}
-        </div>
+          </div>
+    
       </form>
       <br/>
-      <img src="/home.jpg" alt="home" />
+      
+      <img src="/login.jpg" alt="home" />
 
       <br/>
       <Button

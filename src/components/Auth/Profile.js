@@ -28,12 +28,11 @@ function Profile() {
 
 return(
 
-          <div className="header-name">Welcome to your Profile Page! {user.displayName}
+          <div >Welcome to your Profile Page! {user.displayName}
           <p>Click on the button below to view all the Ads posted by you!</p>
-          <button onClick={ShowGuns}>View My Ads</button>
+          <button type="submit" class="btn btn-warning btn-lg" onClick={ShowGuns}>View My Ads</button>
           
-         
-          
+    
           <div>
              {guns.map((gun, index) => (
                 <GunItem

@@ -8,21 +8,24 @@ input {
   max-width: 500px;
 }
 
+
 .gray {
-  color: #828282;
+  color: #ffffff;
 }
 
-.orange {
-  background-color: #ff6600;
+.divstyle{
+  background-color: rgb(236, 233, 233);
+ 
 }
 
 .background-gray {
-  background-color: rgb(246, 246, 239);
+  background-color: rgb(85, 85, 85);
 }
 
 .f11 {
   font-size: 11px;
 }
+
 
 .w85 {
   width: 85%;
@@ -72,25 +75,25 @@ input {
   font-weight: 700;
   margin-left: 0.25rem;
   margin-right: 5px;
-  color: black;
+  color: rgb(255, 255, 255);
   text-decoration: none;
 }
 
 .header-link {
   margin-left: 0.2rem;
-  color: black;
+  color: rgb(255, 255, 255);
   text-decoration: none;
 }
 
 .header-button {
   margin-left: 0.25rem;
-  color: black;
+  color: rgb(255, 255, 255);
   text-decoration: none;
   cursor: pointer;
 }
 
 .header-name {
-  color: black;
+  color: rgb(255, 255, 255);
   text-decoration: none;
 }
 
@@ -120,7 +123,7 @@ textarea {
 }
 
 .route-container {
-  background-color: rgb(246, 246, 239);
+  background-color: rgb(196, 196, 196);
   padding-left: 1rem;
   padding-right: 1rem;
   padding-top: 0.25rem;
@@ -138,8 +141,8 @@ textarea {
 }
 
 .vote-button {
-  font-size: 11px;
-  color: #828282;
+  font-size: px;
+  color: #2fe900;
   margin-left: 0.25rem;
 }
 
